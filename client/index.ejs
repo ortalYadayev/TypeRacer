@@ -10,13 +10,19 @@
 <body>
     <%- include('partials/nav.ejs') -%>
 
-    <h1>Hi <%= moshe %></h1>
-    <h2>Hello <%= data.firstName + ' ' + data.lastName %> </h2>
+    <h1>Hello <%= `${data.firstName} ${data.lastName}` %> </h1>
     <h3>Hobbies</h3>
     <ul>
         <% data.hobbies.forEach(item => { %>
             <li><%= item %></li>
         <% }) %>
     </ul>
+    <% if (randStr.length > data.firstName.length) { %>
+        <p>
+            <%= randStr %> is longer than <%= data.firstName %>
+            by <%= randStr.length - data.firstName.length %>
+            character<%= randStr.length - data.firstName.length > 1 ? 's' : '' %>
+        </p>
+    <% } %>
 </body>
 </html>
