@@ -6,7 +6,7 @@ fastify.register(require('point-of-view'), {
     }
 });
 
-fastify.get('/', async (req, reply) => {
+fastify.get('/',  (req, reply) => {
     const randStr = Math.random().toString(36).replace(/[^a-z]+/g, '');
     const data = {
         firstName: 'John',
