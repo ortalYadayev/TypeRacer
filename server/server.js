@@ -1,7 +1,22 @@
 const fastify = require('fastify')({ logger: true })
 
-fastify.get('/', async (request, reply) => {
-    return { hello: 'TypeRacer' }
+fastify.register(require('point-of-view'), {
+    engine: {
+        ejs: require('ejs')
+    }
+});
+
+fastify.get('/', async (req, reply) => {
+    const data = {
+        firstName: 'John',
+        lastName: 'Doe',
+        hobbies: [
+            'Writing',
+            'Programming',
+            'Playing'
+        ],
+    };
+    reply.view('client/index.ejs', { moshe: 'moshe', data });
 });
 
 const start = async () => {
