@@ -23,7 +23,7 @@ app.get('/',  (request, reply) => {
             'Playing'
         ],
     };
-    reply.view('../client/index.ejs', { randStr: randStr, data: data });
+    reply.view('views/index.ejs', { randStr: randStr, data: data });
 });
 
 const startServer = async (): Promise<void> => {
