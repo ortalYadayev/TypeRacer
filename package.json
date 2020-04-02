@@ -24,6 +24,8 @@
   "devDependencies": {
     "@types/ejs": "^3.0.1",
     "@types/node": "^13.9.8",
-    "point-of-view": "^3.8.0"
+    "point-of-view": "^3.8.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.8.3"
   }
 }
